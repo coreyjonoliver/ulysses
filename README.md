@@ -10,19 +10,19 @@ _ulysses_ is simple to use.
 
 Start by providing the appropriate imports: 
 
-    import org.coreyoliver.ulysses._
+    import org.coreyoliver.ulysses.ini._
 
 Feel free to parse away:
 
-1. Parse an INI string (or file) into an Ini object
+Parse an INI string (or file) into an Ini object
 
         val source = """
         [Section1]
         key1=value1
         """
-        val ini = source.asIni
+        val ini = Ini.loadString(source)
 
-2. Pretty print a Ini object to produce a String
+Pretty print a Ini object to produce a String
 
     val iniStr = ini.prettyPrint
 
@@ -33,7 +33,9 @@ An Ini object is simply a case class with a sections field. For example, to retr
 You can then determine the value of a key in the section:
 
     val value1 = section1.getValue("key1")
-  
+
+Methods which perform parsing return a ValidationNEL[String, String] type from the scalaz library. In the case of a parsing failure, a Failure("reason for failure") will be returned. The positive case will yield a Success containing an Ini object.
+
 ### License
 
 _ulysses_ is licensed under [APL 2.0].

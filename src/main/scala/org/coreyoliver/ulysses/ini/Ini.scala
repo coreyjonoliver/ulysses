@@ -15,6 +15,8 @@ object Ini {
 
   case class Ini(sections: Map[String, Section]) {
 
+    def prettyPrint = Printer.print(this)
+      
     def getSection(name: String): Option[Section] = {
       sections.get(name)
     }
@@ -23,7 +25,7 @@ object Ini {
   def loadString(string: String): ValidationNEL[String, Ini] = {
     for {
       ast <- Parser.parse(string)
-    } yield Generator.toIni(ast)
+    } yield Generator.mkIni(ast)
   }
 
   def loadSource(source: Source) = {
