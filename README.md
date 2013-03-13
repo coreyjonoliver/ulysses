@@ -24,15 +24,15 @@ Feel free to parse away:
 
 2. Pretty print a Ini object to produce a String
 
-        val iniStr = ini.prettyPrint
+    val iniStr = ini.prettyPrint
 
 An Ini object is simply a case class with a sections field. For example, to retrieve a section with the name Section1, you would provide: 
 
-        val section1 = ini.getSection("Section1")
+    val section1 = ini.getSection("Section1")
         
 You can then determine the value of a key in the section:
 
-        val value1 = section1.getValue("key1")
+    val value1 = section1.getValue("key1")
   
 ### License
 
