@@ -1,3 +1,7 @@
+# ulysses
+
+[![Build Status](https://secure.travis-ci.org/coreyjonoliver/ulysses.png?branch=master)](http://travis-ci.org/coreyjonoliver/ulysses)
+
 _ulysses_ is a INI parser implemented using Scala's parser combinators.
 
 ### Usage
