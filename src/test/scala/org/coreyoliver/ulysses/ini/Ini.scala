@@ -16,7 +16,7 @@ class IniSpec extends PropSpec with PropertyChecks with MustMatchers {
     forAll { (ast: Ast.Ini) =>
       lazy val minKeyValueLength = ast.sections.map { case Ast.Section(sn, kvs) => kvs.length } min;
       whenever(ast.sections.length > 0 && minKeyValueLength > 0) {
-        val str = Printer.pretty(ast)
+        val str = Printer.print(ast)
         val newAst = loadString(str)
         newAst.isSuccess must be(true)
       }
