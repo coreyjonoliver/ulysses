@@ -29,7 +29,7 @@ object UlyssesBuild extends Build {
     pomIncludeRepository := { _ => false },
 
     pomExtra := (
-      <url>https://github.com/twitter/scalding</url>
+      <url>https://github.com/coreyjonoliver/ulysses</url>
       <licenses>
         <license>
           <name>Apache 2</name>
